@@ -6,9 +6,9 @@
 -->
 
 # To Do's for this Template
-- [ ] Run the code from file setup/labels.json in your console while on the GitHub labels page to update all labels.
-- [ ] Add a `.gitignore` if needed
-- [ ] Update this readme!
+- [x] Run the code from file setup/labels.json in your console while on the GitHub labels page to update all labels.
+- [x] Add a `.gitignore` if needed
+- [x] Update this readme!
 - [ ] Delete `setup/*` directory and files
 
 [Check out the workflow information for how to use our repositories!](https://github.com/CuUwrRobotics/workflow)
