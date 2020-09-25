@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>colony</name>
+  <version>0.1.0</version>
+  <description>Task 2.2: Colony health detection package for MATE ROV 2020 competition</description>
+
+  <!-- One maintainer tag required, multiple allowed, one person per tag -->
+  <!-- Example: -->
+  <!-- We keep this here but since you should have file headers we don't bother with it! -->
+  <maintainer email="pi@todo.todo">pi</maintainer>
+
+  <!-- One license tag required, multiple allowed, one license per tag -->
+  <!-- Commonly used license strings: -->
+  <!-- BSD, MIT, Boost Software License, GPLv2, GPLv3, LGPLv2.1, LGPLv3 -->
+  <license>GPLv3</license>
+
+  <depend>cv_bridge</depend>
+  <depend>image_transport</depend>
+  <depend>opencv2</depend>
+  <depend>roscpp</depend>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <export>
+    <!-- Other tools can request additional information be placed here -->
+
+  </export>
+</package>
