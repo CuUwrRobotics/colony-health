@@ -2,7 +2,7 @@
  * @Author: Nick Steele <nichlock>
  * @Date:   18:41 Sep 13 2020
  * @Last modified by:   Nick Steele
- * @Last modified time: 20:34 Sep 24 2020
+ * @Last modified time: 21:26 Sep 24 2020
  */
 
 #include <iostream>
@@ -13,9 +13,9 @@ using namespace cv;
 
 const std::string default_test_image = "/images/original.jpg";
 
-bool loadImage(int argc, char const *argv[]);
+bool loadImage(int, char const *[], Mat &);
 
-Mat imageIn;
+Mat image_in;
 Mat imageHsv;
 
 std::string window_image = "Image";
@@ -27,10 +27,12 @@ std::string window_contour_dead = "Contours - Dead";
 bool trackbarsChanged = true; // For OpenCV trackbar usage
 
 int main(int argc, char const *argv[]) {
-  if (!loadImage(argc, argv)) return EXIT_FAILURE;
+  // EXIT_FAILURE indicates to the OS that this program failed, which can be
+  // useful for when we run a bunch of programs.
+  if (!loadImage(argc, argv, image_in)) return EXIT_FAILURE;
 
-  resize(imageIn, imageIn, Size(500, 500), 0, 0, INTER_AREA);
-  cvtColor(imageIn, imageHsv, COLOR_BGR2HSV);
+  resize(image_in, image_in, Size(500, 500), 0, 0, INTER_AREA);
+  cvtColor(image_in, imageHsv, COLOR_BGR2HSV);
 
   int grayscale_type = CV_8UC1;
   int mask_types = grayscale_type; // imageHsv.type();
@@ -178,7 +180,7 @@ int main(int argc, char const *argv[]) {
     trackbarsChanged = false;
 
     // Show results
-    imshow(window_image, imageIn);
+    imshow(window_image, image_in);
     imshow(window_live, live_mask_final);
     imshow(window_dead, dead_mask_final);
     imshow("living canny edges", live_edges);
@@ -192,16 +194,22 @@ int main(int argc, char const *argv[]) {
   return EXIT_SUCCESS;
 } // main
 
-bool loadImage(int argc, char const *argv[]) {
+/** Automatically loads OpenCV image given as command-line argument, or load
+ * default_test_image if none provided.
+ *
+ * @param image The image to be filled
+ * @return false if the image was not loaded
+ */
+bool loadImage(int argc, char const *argv[], Mat &image) {
   if (argc > 1) {
     cout << "Loading image: " << argv[1] << "\n";
-    imageIn = imread(argv[1]);
+    image = imread(argv[1]);
   } else {
     cout << "No image argument given. Loading default image " <<
       default_test_image << "\n";
-    imageIn = imread(default_test_image);
+    image = imread(default_test_image);
   }
-  if (imageIn.empty()) {
+  if (image_in.empty()) {
     cout << "Empty input image!\n";
     return false;
   }
