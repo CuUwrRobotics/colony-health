@@ -13,3 +13,4 @@ See the project for more information!
 
 - Test images go in the `images` folder (unrelated tests can go into `images/other`)
 - `colony-health` is the folder moved into the catkin workspace, so put all code and build files there
+- When you run the program, it will open a default image specified in the code. If you want to open another image, enter it in the command: `rosrun template-opencv template-opencv images/image.jpg`
