@@ -1,14 +1,15 @@
 <!--
-@Author: Nick Steele <nichlock>
-@Date:   21:37 Sep 18 2020
-@Last modified by:   nichlock
-@Last modified time: 19:07 Sep 19 2020
+@Author: Nick Steele
+@Date:   19:04 Sep 24 2020
+@Last modified by:   Nick Steele
+@Last modified time: 20:32 Sep 24 2020
 -->
 
-# To Do's for this Template
-- [x] Run the code from file setup/labels.json in your console while on the GitHub labels page to update all labels.
-- [x] Add a `.gitignore` if needed
-- [x] Update this readme!
-- [ ] Delete `setup/*` directory and files
-
 [Check out the workflow information for how to use our repositories!](https://github.com/CuUwrRobotics/workflow)
+
+# Colony Detection
+
+See the project for more information!
+
+- Test images go in the `images` folder (unrelated tests can go into `images/other`)
+- `colony-health` is the folder moved into the catkin workspace, so put all code and build files there
