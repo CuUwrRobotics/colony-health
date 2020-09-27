@@ -11,7 +11,7 @@
 using namespace std;
 using namespace cv;
 
-const std::string default_test_image = "/images/original.jpg";
+const std::string default_test_image = "/images/a.jpg";
 
 bool loadImage(int, char const *[], Mat &);
 
